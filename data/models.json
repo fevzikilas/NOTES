@@ -188,201 +188,243 @@
     },
     {
       "category": "Semi-Supervised Learning",
-      "algorithms": [
-        {
-          "name": "Self-training",
-          "description": "data/models/Self-training.txt"
-        },
-        {
-          "name": "Co-training",
-          "description": "data/models/Co-training.txt"
-        },
-        {
-          "name": "Generative Adversarial Networks (GANs) for Semi-Supervised Learning",
-          "description": "data/models/Generative Adversarial Networks (GANs) for Semi-Supervised Learning.txt"
-        },
-        {
-          "name": "Graph-based Semi-Supervised Learning",
-          "description": "data/models/Graph-based Semi-Supervised Learning.txt"
-        }
-      ]
+      "subcategories": [
+              {
+                "type": "Semi-Supervised Learning Algorithms",
+                "algorithms": [
+                    {
+                      "name": "Self-training",
+                      "description": "data/models/Self-training.txt"
+                    },
+                    {
+                      "name": "Co-training",
+                      "description": "data/models/Co-training.txt"
+                    },
+                    {
+                      "name": "Generative Adversarial Networks (GANs) for Semi-Supervised Learning",
+                      "description": "data/models/Generative Adversarial Networks (GANs) for Semi-Supervised Learning.txt"
+                    },
+                    {
+                      "name": "Graph-based Semi-Supervised Learning",
+                      "description": "data/models/Graph-based Semi-Supervised Learning.txt"
+                    }
+                ]
+              }
+            ]
+      
     },
     {
       "category": "Reinforcement Learning",
-      "algorithms": [
+      "subcategories": [
         {
-          "name": "Q-Learning",
-          "description": "data/models/Q-Learning.txt"
-        },
-        {
-          "name": "SARSA (State-Action-Reward-State-Action)",
-          "description": "data/models/SARSA (State-Action-Reward-State-Action).txt"
-        },
-        {
-          "name": "Deep Q-Networks (DQN)",
-          "description": "data/models/Deep Q-Networks (DQN).txt"
-        },
-        {
-          "name": "Policy Gradient Methods",
-          "description": "data/models/Policy Gradient Methods.txt"
-        },
-        {
-          "name": "Actor-Critic Methods",
-          "description": "data/models/Actor-Critic Methods.txt"
-        },
-        {
-          "name": "Deep Deterministic Policy Gradient (DDPG)",
-          "description": "data/models/Deep Deterministic Policy Gradient (DDPG).txt"
-        },
-        {
-          "name": "Proximal Policy Optimization (PPO)",
-          "description": "data/models/Proximal Policy Optimization (PPO).txt"
-        },
-        {
-          "name": "Trust Region Policy Optimization (TRPO)",
-          "description": "data/models/Trust Region Policy Optimization (TRPO).txt"
+          "type": "Model-Free Reinforcement Learning Algorithms",
+          "algorithms": [
+            {
+              "name": "Q-Learning",
+              "description": "data/models/Q-Learning.txt"
+            },
+            {
+              "name": "SARSA (State-Action-Reward-State-Action)",
+              "description": "data/models/SARSA (State-Action-Reward-State-Action).txt"
+            },
+            {
+              "name": "Deep Q-Networks (DQN)",
+              "description": "data/models/Deep Q-Networks (DQN).txt"
+            },
+            {
+              "name": "Policy Gradient Methods",
+              "description": "data/models/Policy Gradient Methods.txt"
+            },
+            {
+              "name": "Actor-Critic Methods",
+              "description": "data/models/Actor-Critic Methods.txt"
+            },
+            {
+              "name": "Deep Deterministic Policy Gradient (DDPG)",
+              "description": "data/models/Deep Deterministic Policy Gradient (DDPG).txt"
+            },
+            {
+              "name": "Proximal Policy Optimization (PPO)",
+              "description": "data/models/Proximal Policy Optimization (PPO).txt"
+            },
+            {
+              "name": "Trust Region Policy Optimization (TRPO)",
+              "description": "data/models/Trust Region Policy Optimization (TRPO).txt"
+            }
+          ]
         }
       ]
+      
     },
     {
       "category": "Ensemble Learning",
-      "algorithms": [
+      "subcategories":[
         {
-          "name": "Bagging (Bootstrap Aggregating)",
-          "description": "data/models/Bagging (Bootstrap Aggregating).txt"
-        },
-        {
-          "name": "Random Forest",
-          "description": "data/models/Random Forest.txt"
-        },
-        {
-          "name": "Boosting (e.g., AdaBoost, Gradient Boosting)",
-          "description": "data/models/Boosting (e.g., AdaBoost, Gradient Boosting).txt"
-        },
-        {
-          "name": "Stacking",
-          "description": "data/models/Stacking.txt"
-        },
-        {
-          "name": "Voting Classifier",
-          "description": "data/models/Voting Classifier.txt"
-        },
-        {
-          "name": "Blending",
-          "description": "data/models/Blending.txt"
+          "type": "Ensemble Learning Algorithms",
+          "algorithms": [
+            {
+              "name": "Bagging (Bootstrap Aggregating)",
+              "description": "data/models/Bagging (Bootstrap Aggregating).txt"
+            },
+            {
+              "name": "Random Forest",
+              "description": "data/models/Random Forest.txt"
+            },
+            {
+              "name": "Boosting (e.g., AdaBoost, Gradient Boosting)",
+              "description": "data/models/Boosting (e.g., AdaBoost, Gradient Boosting).txt"
+            },
+            {
+              "name": "Stacking",
+              "description": "data/models/Stacking.txt"
+            },
+            {
+              "name": "Voting Classifier",
+              "description": "data/models/Voting Classifier.txt"
+            },
+            {
+              "name": "Blending",
+              "description": "data/models/Blending.txt"
+            }
+          ]
         }
       ]
     },
     {
       "category": "Neural Networks and Deep Learning",
-      "algorithms": [
+      "subcategories":[
         {
-          "name": "Convolutional Neural Networks (CNN)",
-          "description": "data/models/Convolutional Neural Networks (CNN).txt"
-        },
-        {
-          "name": "Recurrent Neural Networks (RNN)",
-          "description": "data/models/Recurrent Neural Networks (RNN).txt"
-        },
-        {
-          "name": "Long Short-Term Memory Networks (LSTM)",
-          "description": "data/models/Long Short-Term Memory Networks (LSTM).txt"
-        },
-        {
-          "name": "Gated Recurrent Unit (GRU)",
-          "description": "data/models/Gated Recurrent Unit (GRU).txt"
-        },
-        {
-          "name": "Autoencoders",
-          "description": "data/models/Autoencoders.txt"
-        },
-        {
-          "name": "Generative Adversarial Networks (GANs)",
-          "description": "data/models/Generative Adversarial Networks (GANs).txt"
-        },
-        {
-          "name": "Transformer Networks",
-          "description": "data/models/Transformer Networks.txt"
-        },
-        {
-          "name": "BERT (Bidirectional Encoder Representations from Transformers)",
-          "description": "data/models/BERT (Bidirectional Encoder Representations from Transformers).txt"
-        },
-        {
-          "name": "GPT (Generative Pre-trained Transformer)",
-          "description": "data/models/GPT (Generative Pre-trained Transformer).txt"
+          "type": "Neural Network Architectures",
+          "algorithms": [
+            {
+              "name": "Convolutional Neural Networks (CNN)",
+              "description": "data/models/Convolutional Neural Networks (CNN).txt"
+            },
+            {
+              "name": "Recurrent Neural Networks (RNN)",
+              "description": "data/models/Recurrent Neural Networks (RNN).txt"
+            },
+            {
+              "name": "Long Short-Term Memory Networks (LSTM)",
+              "description": "data/models/Long Short-Term Memory Networks (LSTM).txt"
+            },
+            {
+              "name": "Gated Recurrent Unit (GRU)",
+              "description": "data/models/Gated Recurrent Unit (GRU).txt"
+            },
+            {
+              "name": "Autoencoders",
+              "description": "data/models/Autoencoders.txt"
+            },
+            {
+              "name": "Generative Adversarial Networks (GANs)",
+              "description": "data/models/Generative Adversarial Networks (GANs).txt"
+            },
+            {
+              "name": "Transformer Networks",
+              "description": "data/models/Transformer Networks.txt"
+            },
+            {
+              "name": "BERT (Bidirectional Encoder Representations from Transformers)",
+              "description": "data/models/BERT (Bidirectional Encoder Representations from Transformers).txt"
+            },
+            {
+              "name": "GPT (Generative Pre-trained Transformer)",
+              "description": "data/models/GPT (Generative Pre-trained Transformer).txt"
+            }
+          ]
         }
       ]
     },
     {
       "category": "Probabilistic and Statistical Models",
-      "algorithms": [
+      "subcategories":[
         {
-          "name": "Bayesian Networks",
-          "description": "data/models/Bayesian Networks.txt"
-        },
-        {
-          "name": "Hidden Markov Models (HMM)",
-          "description": "data/models/Hidden Markov Models (HMM).txt"
-        },
-        {
-          "name": "Markov Chain Monte Carlo (MCMC)",
-          "description": "data/models/Markov Chain Monte Carlo (MCMC).txt"
-        },
-        {
-          "name": "Gaussian Processes",
-          "description": "data/models/Gaussian Processes.txt"
+          "type": "Probabilistic and Statistical Models",
+          "algorithms": [
+            {
+              "name": "Bayesian Networks",
+              "description": "data/models/Bayesian Networks.txt"
+            },
+            {
+              "name": "Hidden Markov Models (HMM)",
+              "description": "data/models/Hidden Markov Models (HMM).txt"
+            },
+            {
+              "name": "Markov Chain Monte Carlo (MCMC)",
+              "description": "data/models/Markov Chain Monte Carlo (MCMC).txt"
+            },
+            {
+              "name": "Gaussian Processes",
+              "description": "data/models/Gaussian Processes.txt"
+            }
+          ]
         }
       ]
     },
     {
       "category": "Instance-Based Learning",
-      "algorithms": [
+      "subcategories":[
         {
-          "name": "K-Nearest Neighbors (KNN)",
-          "description": "data/models/K-Nearest Neighbors (KNN).txt"
-        },
-        {
-          "name": "Locally Weighted Learning",
-          "description": "data/models/Locally Weighted Learning.txt"
-        },
-        {
-          "name": "Case-Based Reasoning",
-          "description": "data/models/Case-Based Reasoning.txt"
+          "type": "Instance-Based Learning Algorithms",
+          "algorithms": [
+            {
+              "name": "K-Nearest Neighbors (KNN)",
+              "description": "data/models/K-Nearest Neighbors (KNN).txt"
+            },
+            {
+              "name": "Locally Weighted Learning",
+              "description": "data/models/Locally Weighted Learning.txt"
+            },
+            {
+              "name": "Case-Based Reasoning",
+              "description": "data/models/Case-Based Reasoning.txt"
+            }
+          ]
         }
       ]
     },
     {
       "category": "Genetic Algorithms and Evolutionary Computing",
-      "algorithms": [
+      "subcategories":[
         {
-          "name": "Genetic Algorithms (GA)",
-          "description": "data/models/Genetic Algorithms (GA).txt"
-        },
-        {
-          "name": "Genetic Programming (GP)",
-          "description": "data/models/Genetic Programming (GP).txt"
-        },
-        {
-          "name": "Evolutionary Strategies (ES)",
-          "description": "data/models/Evolutionary Strategies (ES).txt"
-        },
-        {
-          "name": "Differential Evolution (DE)",
-          "description": "data/models/Differential Evolution (DE).txt"
-        }
+        "type": "Genetic Algorithms and Evolutionary Computing", 
+        "algorithms": [
+          {
+            "name": "Genetic Algorithms (GA)",
+            "description": "data/models/Genetic Algorithms (GA).txt"
+          },
+          {
+            "name": "Genetic Programming (GP)",
+            "description": "data/models/Genetic Programming (GP).txt"
+          },
+          {
+            "name": "Evolutionary Strategies (ES)",
+            "description": "data/models/Evolutionary Strategies (ES).txt"
+          },
+          {
+            "name": "Differential Evolution (DE)",
+            "description": "data/models/Differential Evolution (DE).txt"
+          }
+        ]
+      }
       ]
     },
     {
       "category": "Hybrid Methods",
-      "algorithms": [
+      "subcategories":[
         {
-          "name": "Neural Evolution (combination of neural networks and genetic algorithms)",
-          "description": "data/models/Neural Evolution (combination of neural networks and genetic algorithms).txt"
-        },
-        {
-          "name": "Neuro-Fuzzy Systems (combination of neural networks and fuzzy logic)",
-          "description": "data/models/Neuro-Fuzzy Systems (combination of neural networks and fuzzy logic).txt"
+          "type": "Hybrid Methods",
+          "algorithms": [
+            {
+              "name": "Neural Evolution (combination of neural networks and genetic algorithms)",
+              "description": "data/models/Neural Evolution (combination of neural networks and genetic algorithms).txt"
+            },
+            {
+              "name": "Neuro-Fuzzy Systems (combination of neural networks and fuzzy logic)",
+              "description": "data/models/Neuro-Fuzzy Systems (combination of neural networks and fuzzy logic).txt"
+            }
+          ]
         }
       ]
     }
