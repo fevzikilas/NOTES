@@ -100,7 +100,7 @@
                 const dropdownItem = document.createElement('li');
                 const dropdownLink = document.createElement('a');
                 dropdownLink.classList.add('dropdown-item');
-                dropdownLink.href = `#section_${index + 1}`;
+                dropdownLink.href = `#${category.category}`;
                 dropdownLink.textContent = category.category;
                 dropdownItem.appendChild(dropdownLink);
                 categoryDropdownMenu.appendChild(dropdownItem);
@@ -108,7 +108,7 @@
                 // Create section for each category
                 const section = document.createElement('section');
                 section.classList.add('mlnotes-section', 'd-flex', 'justify-content-center', 'align-items-center');
-                section.id = `section_${index + 1}`;
+                section.id = `${category.category}`;
                 section.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path fill="#00000" fill-opacity="1" d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
@@ -117,12 +117,12 @@
                     <div class="row">
                     <h2 class="text-center" style="color: #ffffff">${category.category}</h2>
                     <br><br><br>
-                    <div class="col-lg-4 col-12">
+                    <div class="col-lg-3 col-12">
                         <div id="model-list-${index + 1}" class="model-list">
                         <!-- Model information will be dynamically loaded here -->
                         </div>
                     </div>
-                    <div class="col-lg-8 col-12">
+                    <div class="col-lg-9 col-12">
                         <div id="details-panel-${index + 1}" class="details-panel">
                         <!-- Model details will be dynamically loaded here -->
                         </div>
