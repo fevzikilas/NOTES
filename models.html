@@ -38,7 +38,7 @@
                                 <a class="nav-link click-scroll" href="#section_1">ML NOTES</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                                <a class="nav-link dropdown-toggle" href="" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">NOTES</a>
                                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                     <li><a class="dropdown-item" href="models.html">ML NOTES</a></li>
                                     <li><a class="dropdown-item" href="tsfm.html">TSF MODELS</a></li>
@@ -92,102 +92,124 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const categoryDropdownMenu = document.getElementById('categoryDropdownMenu');
-
         fetch('data/models.json')
             .then(response => response.json())
             .then(data => {
-                data.models.forEach((category, index) => {
-                    // Create dropdown item for each category
-                    const dropdownItem = document.createElement('li');
-                    const dropdownLink = document.createElement('a');
-                    dropdownLink.classList.add('dropdown-item');
-                    dropdownLink.href = `#section_${index + 1}`;
-                    dropdownLink.textContent = category.category;
-                    dropdownItem.appendChild(dropdownLink);
-                    categoryDropdownMenu.appendChild(dropdownItem);
+            data.models.forEach((category, index) => {
+                // Create dropdown item for each category
+                const dropdownItem = document.createElement('li');
+                const dropdownLink = document.createElement('a');
+                dropdownLink.classList.add('dropdown-item');
+                dropdownLink.href = `#section_${index + 1}`;
+                dropdownLink.textContent = category.category;
+                dropdownItem.appendChild(dropdownLink);
+                categoryDropdownMenu.appendChild(dropdownItem);
 
-                    // Create section for each category
-                    const section = document.createElement('section');
-                    section.classList.add('mlnotes-section', 'd-flex', 'justify-content-center', 'align-items-center');
-                    section.id = `section_${index + 1}`;
-                    section.innerHTML = `
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                            <path fill="#00000" fill-opacity="1" d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
-                        </svg>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4 col-12">
-                                    <div id="model-list-${index + 1}" class="model-list">
-                                        <!-- Model information will be dynamically loaded here -->
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-12">
-                                    <div id="details-panel-${index + 1}" class="details-panel">
-                                        <!-- Model details will be dynamically loaded here -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <br><br><br><br><br><br><br><br>
-                            </div>
+                // Create section for each category
+                const section = document.createElement('section');
+                section.classList.add('mlnotes-section', 'd-flex', 'justify-content-center', 'align-items-center');
+                section.id = `section_${index + 1}`;
+                section.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#00000" fill-opacity="1" d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+                </svg>
+                <div class="container">
+                    <div class="row">
+                    <h2 class="text-center" style="color: #ffffff">${category.category}</h2>
+                    <br><br><br>
+                    <div class="col-lg-4 col-12">
+                        <div id="model-list-${index + 1}" class="model-list">
+                        <!-- Model information will be dynamically loaded here -->
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                            <path fill="#00000" fill-opacity="1" d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
-                        </svg>
-                    `;
-                    document.querySelector('main').appendChild(section);
+                    </div>
+                    <div class="col-lg-8 col-12">
+                        <div id="details-panel-${index + 1}" class="details-panel">
+                        <!-- Model details will be dynamically loaded here -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#00000" fill-opacity="1" d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+                </svg>
+                <style>
+                    .subcategory-item h4{
+                        color: #ffffff;
+                        font-size: 1rem;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                    }
+                    .subcategory-item h5{
+                        color: #ffffff;
+                        font-size: 0.8rem;
+                        background-color: #ffffff1a;
+                        padding: 0.5rem;
+                        margin-left: 1rem;
 
-                    // Populate model list and details panel for each category
-                    const modelListElement = document.getElementById(`model-list-${index + 1}`);
-                    const detailsPanelElement = document.getElementById(`details-panel-${index + 1}`);
+                    }
+                    .subcategory-item h5:hover{
+                        color: #ffffff;
+                        font-size: 0.9rem;
+                        background-color: #ffffff5a;
+                        padding: 0.5rem;
+                        margin-left: 1rem;
 
-                    category.subcategories.forEach(subcategory => {
-                        const subcategoryDiv = document.createElement('div');
-                        subcategoryDiv.classList.add('subcategory-item');
+                    }
+                </style>
+                `;
+                document.querySelector('main').appendChild(section);
 
-                        const subcategoryHeader = document.createElement('h4');
-                        subcategoryHeader.textContent = subcategory.type;
-                        subcategoryDiv.appendChild(subcategoryHeader);
+                // Populate model list and details panel for each category
+                const modelListElement = document.getElementById(`model-list-${index + 1}`);
+                const detailsPanelElement = document.getElementById(`details-panel-${index + 1}`);
 
-                        subcategory.algorithms.forEach(algorithm => {
-                            const algorithmDiv = document.createElement('div');
-                            algorithmDiv.classList.add('algorithm-item');
+                category.subcategories.forEach(subcategory => {
+                const subcategoryDiv = document.createElement('div');
+                subcategoryDiv.classList.add('subcategory-item');
 
-                            const algorithmHeader = document.createElement('h5');
-                            algorithmHeader.textContent = algorithm.name;
-                            algorithmDiv.appendChild(algorithmHeader);
+                const subcategoryHeader = document.createElement('h4');
+                subcategoryHeader.textContent = subcategory.type;
+                subcategoryDiv.appendChild(subcategoryHeader);
 
-                            algorithmHeader.addEventListener('click', function() {
-                                detailsPanelElement.innerHTML = '';
-                                const algorithmDetails = document.createElement('div');
-                                algorithmDetails.classList.add('algorithm-details');
+                subcategory.algorithms.forEach(algorithm => {
+                    const algorithmDiv = document.createElement('div');
+                    algorithmDiv.classList.add('algorithm-item');
 
-                                fetch(algorithm.description)
-                                    .then(response => {
-                                        if (!response.ok) {
-                                            throw new Error('Cannot GET');
-                                        }
-                                        return response.text();
-                                    })
-                                    .then(text => {
-                                        algorithmDetails.innerHTML = marked.parse(text);
-                                        detailsPanelElement.appendChild(algorithmDetails);
-                                    })
-                                    .catch(error => {
-                                        console.error('Error loading description:', error);
-                                        const errorLabel = document.createElement('label');
-                                        errorLabel.textContent = 'Error loading description';
-                                        errorLabel.classList.add('error');
-                                        algorithmDetails.appendChild(errorLabel);
-                                        detailsPanelElement.appendChild(algorithmDetails);
-                                    });
-                            });
-                            subcategoryDiv.appendChild(algorithmDiv);
+                    const algorithmHeader = document.createElement('h5');
+                    algorithmHeader.textContent = algorithm.name;
+                    algorithmDiv.appendChild(algorithmHeader);
+
+                    algorithmHeader.addEventListener('click', function() {
+                    detailsPanelElement.innerHTML = '';
+                    const algorithmDetails = document.createElement('div');
+                    algorithmDetails.classList.add('algorithm-details');
+
+                    fetch(algorithm.description)
+                        .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Cannot GET');
+                        }
+                        return response.text();
+                        })
+                        .then(text => {
+                        algorithmDetails.innerHTML = marked.parse(text);
+                        detailsPanelElement.appendChild(algorithmDetails);
+                        })
+                        .catch(error => {
+                        console.error('Error loading description:', error);
+                        const errorLabel = document.createElement('label');
+                        errorLabel.textContent = 'Error loading description';
+                        errorLabel.classList.add('error');
+                        algorithmDetails.appendChild(errorLabel);
+                        detailsPanelElement.appendChild(algorithmDetails);
                         });
-                        modelListElement.appendChild(subcategoryDiv);
                     });
+                    subcategoryDiv.appendChild(algorithmDiv);
                 });
+                modelListElement.appendChild(subcategoryDiv);
+                });
+            });
             })
             .catch(error => console.error('Error loading models:', error));
-    });
+        });
 </script>

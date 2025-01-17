@@ -1,3 +1,5 @@
+## Lasso Regression
+
 Lasso Regression is a linear regression technique that incorporates L1 regularization to enhance model performance and interpretability. It works by adding a penalty equal to the absolute value of the magnitude of coefficients to the loss function. This penalty encourages sparsity in the model, effectively reducing the number of features by driving some coefficients to zero.
 
 ### Characteristics:
