@@ -51,7 +51,12 @@
               "description": "data/models/K-Nearest Neighbors (KNN) Regression.txt"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "category": "Supervised Learning",
+      "subcategories":[
         {
           "type": "Classification Algorithms",
           "algorithms": [
@@ -114,8 +119,7 @@
           ]
         }
       ]
-    },
-    {
+    },{
       "category": "Unsupervised Learning",
       "subcategories": [
         {
@@ -150,7 +154,12 @@
               "description": "data/models/Affinity Propagation.txt"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "category": "Unsupervised Learning",
+      "subcategories": [
         {
           "type": "Dimensionality Reduction Algorithms",
           "algorithms": [

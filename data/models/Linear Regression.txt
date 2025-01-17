@@ -3,3 +3,27 @@
 
 
 
+Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables. The goal is to find the linear equation that best predicts the dependent variable based on the independent variables.
+
+The general form of a linear regression model is:
+y = β0 + β1x1 + β2x2 + ... + βnxn + ε
+
+Where:
+- y is the dependent variable
+- x1, x2, ..., xn are the independent variables
+- β0 is the intercept
+- β1, β2, ..., βn are the coefficients
+- ε is the error term
+
+Key assumptions of linear regression:
+1. Linearity: The relationship between the dependent and independent variables is linear.
+2. Independence: The observations are independent of each other.
+3. Homoscedasticity: The variance of the error terms is constant across all levels of the independent variables.
+4. Normality: The error terms are normally distributed.
+
+Common metrics to evaluate a linear regression model include:
+- R-squared: Measures the proportion of the variance in the dependent variable that is predictable from the independent variables.
+- Mean Squared Error (MSE): The average of the squared differences between the observed and predicted values.
+- Root Mean Squared Error (RMSE): The square root of the MSE, providing a measure of the average magnitude of the prediction errors.
+
+Linear regression is widely used in various fields such as economics, finance, biology, and social sciences for predictive modeling and data analysis.

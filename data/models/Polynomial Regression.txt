@@ -1,1 +1,13 @@
 ## Polynomial Regression
+
+Polynomial regression is a form of regression analysis in which the relationship between the independent variable \( x \) and the dependent variable \( y \) is modeled as an \( n \)-th degree polynomial. Polynomial regression fits a nonlinear relationship between the value of \( x \) and the corresponding conditional mean of \( y \).
+
+### Steps to Perform Polynomial Regression
+
+1. **Import Libraries**: Import the necessary libraries such as NumPy, pandas, and scikit-learn.
+2. **Load Data**: Load the dataset that you want to use for polynomial regression.
+3. **Preprocess Data**: Preprocess the data by handling missing values, encoding categorical variables, and splitting the data into training and testing sets.
+4. **Create Polynomial Features**: Use `PolynomialFeatures` from scikit-learn to create polynomial features from the original data.
+5. **Fit the Model**: Fit a linear regression model to the polynomial features.
+6. **Evaluate the Model**: Evaluate the model using metrics such as Mean Squared Error (MSE) and R-squared.
+
