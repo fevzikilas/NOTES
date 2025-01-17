@@ -1,7 +1,7 @@
 {
   "models": [
     {
-      "category": "Supervised Learning",
+      "category": "Supervised Learning Regression",
       "subcategories": [
         {
           "type": "Regression Algorithms",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "category": "Supervised Learning",
+      "category": "Supervised Learning Classification",
       "subcategories":[
         {
           "type": "Classification Algorithms",
@@ -120,7 +120,7 @@
         }
       ]
     },{
-      "category": "Unsupervised Learning",
+      "category": "Unsupervised Learning Clustering",
       "subcategories": [
         {
           "type": "Clustering Algorithms",
@@ -158,7 +158,7 @@
       ]
     },
     {
-      "category": "Unsupervised Learning",
+      "category": "Unsupervised Learning Reduction" ,
       "subcategories": [
         {
           "type": "Dimensionality Reduction Algorithms",
