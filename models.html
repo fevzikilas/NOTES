@@ -14,7 +14,7 @@
         <link href="css/template.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body style="background-color: black;">
         <main>
             <nav class="navbar navbar-expand-lg">                
                 <div class="container">
@@ -28,15 +28,6 @@
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-lg-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarCategoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarCategoryDropdown" id="categoryDropdownMenu">
-                                    <!-- Categories will be dynamically loaded here -->
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#Supervised Learning Regression">ML NOTES</a>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">NOTES</a>
                                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
@@ -52,6 +43,19 @@
                 </div>
             </nav>
 
+            <div id="categoryCarousel" class="carousel slide" data-interval="false">
+                <div class="carousel-inner" id="carouselInner">
+                    <!-- Sections will be dynamically loaded here -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev" style="position: absolute; top: 50vh; transform: translateY(-50%); left: -70px;" >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next" style="position: absolute; top: 50vh; transform: translateY(-50%); right: -70px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </main>
 
         <section class="footer">
@@ -91,42 +95,48 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const categoryDropdownMenu = document.getElementById('categoryDropdownMenu');
+        const carouselInner = document.getElementById('carouselInner');
         fetch('data/models.json')
             .then(response => response.json())
             .then(data => {
             data.models.forEach((category, index) => {
-                const dropdownItem = document.createElement('li');
                 const dropdownLink = document.createElement('a');
                 dropdownLink.classList.add('dropdown-item');
                 dropdownLink.href = `#${category.category}`;
                 dropdownLink.textContent = category.category;
-                dropdownItem.appendChild(dropdownLink);
-                categoryDropdownMenu.appendChild(dropdownItem);
 
-                const section = document.createElement('section');
-                section.classList.add('mlnotes-section', 'd-flex', 'justify-content-center', 'align-items-center');
-                section.id = `${category.category}`;
-                section.innerHTML = `
-                <div class="container">
-                    <div class="row">
-                        <h2 class="text-center" style="color: #ffffff">${category.category}</h2>
-                        <br><br><br>
-                        <div class="col-lg-3 col-12">
-                            <div id="model-list-${index + 1}" class="model-list">
-                            <!-- Model information will be dynamically loaded here -->
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                if (index === 0) {
+                    carouselItem.classList.add('active');
+                }
+                carouselItem.innerHTML = `
+                <section class="mlnotes-section d-flex justify-content-center align-items-center" id="${category.category}">
+                    <div class="container">
+                        <div class="row">
+                            <h2 class="text-center" style="color: #ffffff">${category.category}</h2>
+                            <br><br><br>
+                            <div class="col-lg-2 col-12">
+                                <div id="model-list-${index + 1}" class="model-list">
+                                <!-- Model information will be dynamically loaded here -->
+                            </div>
+                                <br><br><br><br><br><br><br><br><br>
+                                <br><br><br><br><br><br><br><br><br>
+
+                        </div>
+                        <div class="col-lg-10 col-12">
+                            <div id="details-panel-${index + 1}" class="details-panel">
+                            <!-- Model details will be dynamically loaded here -->
+                            <p>This document itself is a working notebook and a way of sharing the information I have learned. </p>
+                            <p>You can find the details of the model you want from the left panel.</p>
+                            </div>
+                                <br><br><br><br><br><br><br><br><br>
+                                <br><br><br><br><br><br><br><br><br>
+
+                        </div>
                         </div>
                     </div>
-                    <div class="col-lg-9 col-12">
-                        <div id="details-panel-${index + 1}" class="details-panel">
-                        <!-- Model details will be dynamically loaded here -->
-                        <p>This document itself is a working notebook and a way of sharing the information I have learned. </p>
-                        <p>You can find the details of the model you want from the left panel.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-               
+                </section>
                 <style>
                     .subcategory-item h4{
                         color: #ffffff;
@@ -160,11 +170,9 @@
                         border-radius: 0.5rem;
                         color: #ffffff;
                     }
-                    
-
                 </style>
                 `;
-                document.querySelector('main').appendChild(section);
+                carouselInner.appendChild(carouselItem);
 
                 const modelListElement = document.getElementById(`model-list-${index + 1}`);
                 const detailsPanelElement = document.getElementById(`details-panel-${index + 1}`);
