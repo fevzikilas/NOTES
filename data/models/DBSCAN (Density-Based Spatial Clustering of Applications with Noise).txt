@@ -1,4 +1,24 @@
-DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a popular clustering algorithm that groups together points that are closely packed together, marking as outliers points that lie alone in low-density regions. 
+## CLustering with DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
+`Source: statquest youtube video :)`
+
+DBSCAN is a popular clustering algorithm that groups together points that are closely packed together, marking as outliers points that lie alone in low-density regions. 
+
+For 3+ dimensions we can not draw graph to see clusters so we need a way to identify nested clusters. DBSCAN is one of the algorithm does that. DBSCAN uses the debsities of the points to idenify clusters.
+
+First step is counting the number of points close to each point. To do that chose a point, draw circle around it and count other points. Radius of the circle user defined.
+
+Then define a Core Point to be one that is close to at least n+ other points. n is user defined also.
+
+Next step, randomly select a core point then assigened to the first cluster. Then draw same circle and add them to first cluster also. Then Core points that are close to gowing first cluster join it and extend it to other Core Points that are close by. Only add Core Points to the first cluster. Continue until there is no Core Points left to add. If there is no Core Points to add add all none Core Points that are close to Core Points in the first cluster. But dont add this point tho the growing cluster, for example another point close to non Core Points but included to first cluster will not be added first cluster. First cluster done.
+
+Then look other core points that are not assigned first cluster. And than apply same thing to them. 
+
+Lastly points that not core point or not close any core points will not be assigned any cluster. They are outliers.
+
+DBSCAN algo is this. But what if a None Core Point is close to the two Core Points. Just add it to the first cluster.
+
+
 
 ### Key Features:
 - **Density-Based Clustering**: Unlike traditional clustering methods that require the number of clusters to be specified in advance, DBSCAN identifies clusters based on the density of data points.
